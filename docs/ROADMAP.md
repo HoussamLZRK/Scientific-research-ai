@@ -8,7 +8,7 @@ platform using Big Data, Knowledge Graphs and GraphRAG.
 ## Development Phases
 
 - [ ] Phase 1: Project setup and GitHub repository
-- [ ] Phase 2: Scientific data collection with OpenAlex
+- [ ] Phase 2: Scientific data collection with Crawler scrapy
 - [ ] Phase 3: Big Data processing with HDFS and Spark
 - [ ] Phase 4: Knowledge Graph construction with Neo4j
 - [ ] Phase 5: Graph Analytics with Cypher
