@@ -1,0 +1,2 @@
+# Python 3.11+ recommandé. Python 3.12 est une option stable sous Windows.
+Scrapy>=2.13,<3
