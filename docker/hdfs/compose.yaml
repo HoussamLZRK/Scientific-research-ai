@@ -1,0 +1,41 @@
+name: srai-hdfs-lab
+
+services:
+  namenode:
+    image: apache/hadoop:3.4.3
+    user: "root"
+    hostname: namenode
+    environment:
+      HADOOP_CONF_DIR: /opt/hadoop/etc/hadoop
+      HADOOP_HEAPSIZE_MAX: 512m
+    command: ["bash", "/opt/srai/start-namenode.sh"]
+    ports:
+      - "127.0.0.1:${HDFS_UI_PORT:-19870}:9870"
+    volumes:
+      - namenode_data:/data/hdfs/namenode
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+      - ./start-namenode.sh:/opt/srai/start-namenode.sh:ro
+      - ../../data:/project-data:ro
+    restart: unless-stopped
+
+  datanode:
+    image: apache/hadoop:3.4.3
+    user: "root"
+    hostname: srai-datanode
+    environment:
+      HADOOP_CONF_DIR: /opt/hadoop/etc/hadoop
+      HADOOP_HEAPSIZE_MAX: 512m
+    command: ["bash", "/opt/srai/start-datanode.sh"]
+    depends_on:
+      - namenode
+    volumes:
+      - datanode_data:/data/hdfs/datanode
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+      - ./start-datanode.sh:/opt/srai/start-datanode.sh:ro
+    restart: unless-stopped
+
+volumes:
+  namenode_data:
+  datanode_data:
