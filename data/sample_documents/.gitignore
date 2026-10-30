@@ -1,0 +1,3 @@
+# Conserver ce dossier vide dans Git, mais pas les PDF récupérés localement.
+*.pdf
+*.part

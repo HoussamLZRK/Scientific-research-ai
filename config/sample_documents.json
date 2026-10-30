@@ -1,0 +1,54 @@
+[
+  {
+    "id": "acl_2024_rag_retrievers",
+    "source": "ACL Anthology",
+    "title": "Bridging the Preference Gap between Retrievers and LLMs",
+    "authors": ["Zixuan Ke", "Weize Kong", "Cheng Li", "Mingyang Zhang", "Qiaozhu Mei", "Michael Bendersky"],
+    "year": 2024,
+    "doi": "10.18653/v1/2024.acl-long.562",
+    "article_url": "https://aclanthology.org/2024.acl-long.562/",
+    "pdf_url": "https://aclanthology.org/2024.acl-long.562.pdf",
+    "filename": "acl_rag_retrievers_2024.pdf",
+    "topic": "Retrieval-Augmented Generation",
+    "rights_note": "Copyright ACL; conserver localement et citer la source, sans republier le PDF avant vérification de la licence."
+  },
+  {
+    "id": "pmlr_2024_retrieval_models",
+    "source": "PMLR",
+    "title": "A Statistical Framework for Data-dependent Retrieval-Augmented Models",
+    "authors": ["Soumya Basu", "Ankit Singh Rawat", "Manzil Zaheer"],
+    "year": 2024,
+    "doi": null,
+    "article_url": "https://proceedings.mlr.press/v235/basu24a.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/basu24a/basu24a.pdf",
+    "filename": "pmlr_retrieval_models_2024.pdf",
+    "topic": "Retrieval-augmented learning",
+    "rights_note": "Vérifier les conditions PMLR avant toute redistribution du texte intégral."
+  },
+  {
+    "id": "plos_2024_llm_science",
+    "source": "PLOS",
+    "title": "Ten simple rules for using large language models in science, version 1.0",
+    "authors": ["Gabriel Reuben Smith", "Carolina Bello", "Lalasia Bialic-Murphy", "et al."],
+    "year": 2024,
+    "doi": "10.1371/journal.pcbi.1011767",
+    "article_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011767",
+    "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1011767&type=printable",
+    "filename": "plos_llm_science_2024.pdf",
+    "topic": "LLMs in scientific research",
+    "rights_note": "Open access, CC BY avec attribution des auteurs et de la source."
+  },
+  {
+    "id": "hal_2024_wikidata_llm",
+    "source": "HAL",
+    "title": "Refining Wikidata Taxonomy using Large Language Models",
+    "authors": ["Yiwen Peng", "Thomas Bonald", "Mehwish Alam"],
+    "year": 2024,
+    "doi": "10.1145/3627673.3679156",
+    "article_url": "https://hal.science/hal-04687258",
+    "pdf_url": "https://hal.science/hal-04687258v1/file/WiKC_CIKM_2024.pdf",
+    "filename": "hal_wikidata_llm_2024.pdf",
+    "topic": "Knowledge graphs and LLMs",
+    "rights_note": "Dépôt HAL en accès libre; vérifier les droits de redistribution pour cette version. L'accès automatisé peut être bloqué par Anubis."
+  }
+]
