@@ -218,3 +218,39 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# Local vector indexes
+data/processed/faiss_nomic_v1/
+*.faiss
+
+# Local infrastructure
+docker/**/volumes/
+docker/**/data/
+
+# Temporary files
+*.log
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+
+# Archives generated for distribution
+*.zip
+

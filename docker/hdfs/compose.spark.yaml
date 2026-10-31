@@ -1,0 +1,44 @@
+# Extension facultative du compose HDFS existant.
+# À lancer avec : docker compose -f docker/hdfs/compose.yaml -f docker/hdfs/compose.spark.yaml run --rm spark-etl
+services:
+  spark-etl:
+    image: apache/spark:3.5.7-python3
+    user: "0:0"
+    hostname: srai-spark-etl
+    depends_on:
+      - namenode
+      - datanode
+    environment:
+      HADOOP_CONF_DIR: /opt/srai/hadoop-conf
+      PYSPARK_PYTHON: python3
+      PYSPARK_DRIVER_PYTHON: python3
+      SPARK_LOCAL_HOSTNAME: localhost
+      HOME: /tmp
+    volumes:
+      - ./config/core-site.xml:/opt/srai/hadoop-conf/core-site.xml:ro
+      - ./config/hdfs-site.xml:/opt/srai/hadoop-conf/hdfs-site.xml:ro
+      - ../../scripts:/project/scripts:ro
+      - ../../data:/project/data
+    command:
+      - /opt/spark/bin/spark-submit
+      - --master
+      - local[2]
+      - --conf
+      - spark.ui.enabled=false
+      - --conf
+      - spark.sql.shuffle.partitions=2
+      - --conf
+      - spark.driver.memory=1g
+      - --conf
+      - spark.hadoop.fs.defaultFS=hdfs://namenode:8020
+      - /project/scripts/spark_etl_publications.py
+      - --publications
+      - hdfs://namenode:8020/scientific-research-ai/processed/publications_multisource_v3.jsonl
+      - --chunks
+      - file:///project/data/processed/chunks/pdf_chunks.jsonl
+      - --hdfs-output
+      - hdfs://namenode:8020/scientific-research-ai/curated/spark_etl_v1
+      - --local-output
+      - /project/data/processed/spark
+      - --report
+      - /project/data/reports/spark_etl_quality_report.json

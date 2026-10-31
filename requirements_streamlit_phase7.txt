@@ -1,0 +1,4 @@
+streamlit>=1.35,<2
+neo4j>=5,<7
+numpy>=1.26,<3
+faiss-cpu>=1.9
